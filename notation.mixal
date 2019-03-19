@@ -1,0 +1,8 @@
+* mixal notation examples:
+* label ins    operand		comment                       (4)
+TERM	EQU	19
+  	ORIG	3000
+START	LDA	INITIAL		load A from location 3002 
+	HLT
+INITIAL	CON	-21246276	set location 3002	
+	END	START

@@ -1,0 +1,14 @@
+*                                                        (1)
+* echo.mixal						 (2)
+*                                                        (3)
+* label ins    operand     comment                       (4)
+TERM	EQU	19		the typewriter device is 19, stdin/stdout
+BUF	EQU	500		input buffer
+	ORIG	1000
+START	OUT	PROMPT(TERM)
+	IN	BUF(TERM)
+	OUT	BUF(TERM)
+	JMP	START
+	HLT
+PROMPT	ALF	" >>> "
+	END	START
