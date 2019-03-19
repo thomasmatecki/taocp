@@ -1,8 +1,19 @@
 * mixal notation examples:
-* label ins    operand		comment                       (4)
+* A  C  P  E  D
+* 01 03 17 05 04 = -21246276
+* label ins    operand		comment
 TERM	EQU	19
+BUF	EQU	500
   	ORIG	3000
-START	LDA	INITIAL		load A from location 3002 
+START	LDA	INITIAL		load A from constant value 
+	STA	BUF		store A in the output buffer
+	OUT	BUF(TERM)	output buffer to term - output ACPED
+	LDA	INITIAL(1:5)	load A from constant value 
+	STA	BUF		store A in the output buffer
+	OUT	BUF(TERM)	output buffer to term - output ACPED
+	LDA	INITIAL(3:5)	load A from constant value 
+	STA	BUF		store A in the output buffer
+	OUT	BUF(TERM)	output buffer to term - output ACPED
 	HLT
-INITIAL	CON	-21246276	set location 3002	
+INITIAL	CON	-21246276	set constant value INITIAL
 	END	START
